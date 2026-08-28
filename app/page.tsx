@@ -1,4 +1,6 @@
-import { ArchiveIcon } from "lucide-react";
+import { ArchiveIcon, MessageCircleIcon, ThumbsUp } from "lucide-react";
+import { Section } from "@/components/section";
+import { Card } from "@/components/card";
 
 export default function Home() {
   return (
@@ -6,22 +8,35 @@ export default function Home() {
       <div />
 
       <main className="grid grid-cols-4 gap-5 flex-1 items-stretch">
-        <div className="bg-navy-800 rounded-xl border-[0.5px] border-navy-500 pt-3 flex flex-col gap-1">
-          <div className="flex items-center justify-between px-3">
-            <span className="bg-navy-700 rounded-lg px-3 py-1.5 flex items-center gap-2 text-xs">
+        <Section.Root>
+          <Section.Header>
+            <Section.Title>
               <ArchiveIcon className="size-3" />
               Backlog
-            </span>
+            </Section.Title>
 
-            <span className="text-xs text-navy-200">16</span>
-          </div>
+            <Section.IssueCount>16</Section.IssueCount>
+          </Section.Header>
 
-          <div className="flex flex-col gap-2.5 overflow-y-scroll p-3">
-              <div>card 1</div>
-              <div>card 2</div>
-              <div>card 3</div>
-          </div>
-        </div>
+          <Section.Content>
+              <Card.Root>
+                <Card.Header>
+                  <Card.Number>EC0-001</Card.Number>
+                  <Card.Title>Implementar cartão de crédito</Card.Title>
+                </Card.Header>
+                <Card.Footer>
+                  <button type="button" className="text-navy-100 flex items-center gap-2 rounded-lg px-2.5 py-1 bg-navy-600 cursor-pointer">
+                    <ThumbsUp className="size-3" />
+                    <span className="text-sm">12</span>
+                  </button>
+                  <button type="button" className="text-navy-100 flex items-center gap-2 rounded-lg px-2.5 py-1 bg-navy-600 cursor-pointer">
+                    <MessageCircleIcon className="size-3" />
+                    <span className="text-sm">12</span>
+                  </button>
+                </Card.Footer>
+              </Card.Root>
+          </Section.Content>
+        </Section.Root>
       </main>
     </div>
   )
