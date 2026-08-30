@@ -1,10 +1,11 @@
 import type { ComponentProps } from "react"
 import { twMerge } from "tailwind-merge"
 
-interface CardRootProps extends ComponentProps<"a"> {}
+type CardRootProps = ComponentProps<"a">
 
 function CardRoot({ className, ...props }: CardRootProps) {
   return (
+    // eslint-disable-next-line @next/next/no-html-link-for-pages
     <a
       href="/"
       className={twMerge(
@@ -18,7 +19,7 @@ function CardRoot({ className, ...props }: CardRootProps) {
   )
 }
 
-interface CardHeaderProps extends ComponentProps<"div"> {}
+type CardHeaderProps = ComponentProps<"div">
 
 function CardHeader({ className, ...props }: CardHeaderProps) {
   return (
@@ -26,7 +27,7 @@ function CardHeader({ className, ...props }: CardHeaderProps) {
   )
 }
 
-interface CardTitleProps extends ComponentProps<"span"> {}
+type CardTitleProps = ComponentProps<"span">
 
 function CardTitle({ className, ...props }: CardTitleProps) {
   return (
@@ -34,7 +35,7 @@ function CardTitle({ className, ...props }: CardTitleProps) {
   )
 }
 
-interface CardNumberProps extends ComponentProps<"span"> {}
+type CardNumberProps = ComponentProps<"span">
 
 function CardNumber({ className, ...props }: CardNumberProps) {
   return (
@@ -42,7 +43,7 @@ function CardNumber({ className, ...props }: CardNumberProps) {
   )
 }
 
-interface CardFooterProps extends ComponentProps<"div"> {}
+type CardFooterProps = ComponentProps<"div">
 
 function CardFooter({ className, ...props }: CardFooterProps) {
   return (
