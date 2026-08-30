@@ -27,6 +27,8 @@
     "postgres": "3.4.7",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "scrollbar": "^0.1.12",
+    "tailwind": "^4.0.0",
     "tailwind-merge": "^3.6.0",
     "zod": "4.1.11"
   },
@@ -41,6 +43,7 @@
     "drizzle-kit": "0.31.5",
     "eslint": "^9",
     "eslint-config-next": "16.3.3",
+    "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4",
     "tsx": "^4.23.12",
     "typescript": "^5"
