@@ -13,7 +13,7 @@ type CommentAvatarProps = ComponentProps<"img">
 
 function CommentAvatar({ className, ...props }: CommentAvatarProps) {
   return (
-    // biome-ignore lint/performance/noImgElement: GitHub image is already optimized
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       className={twMerge("size-8 rounded-full", className)}
       alt=""
