@@ -6,7 +6,6 @@ import { IssueCommentsList } from "./issue-comments/issue-comments-list"
 import { Suspense } from "react"
 import { IssueCommentsSkeleton } from "./issue-comments/issue-comments-skeleton"
 import { Input } from "@/components/input"
-import { Skeleton } from "@/components/skeleton"
 import { IssueLikeButton } from "./issue-comments/issue-like-button"
 
 interface IssuePageProps {
@@ -53,9 +52,7 @@ export default async function IssuePage({ params }: IssuePageProps) {
           {statusLabels[issue.status]}
         </span>
 
-        <Suspense fallback={<Skeleton className="h-7 w-16" />}>
-          <IssueLikeButton issueId={issue.id} />
-        </Suspense>
+        <IssueLikeButton issueId={issue.id} />
       </div>
 
       <div className="space-y-2">
@@ -64,10 +61,11 @@ export default async function IssuePage({ params }: IssuePageProps) {
           {issue.description}
         </p>
       </div>
-       <div className="flex flex-col gap-2">
+
+      <div className="flex flex-col gap-2">
         <span className="font-semibold">Comments</span>
 
-         <form className="relative w-full">
+        <form className="relative w-full">
           <Input
             className="bg-navy-700 h-11 pr-24 w-full"
             placeholder="Leave a comment..."
@@ -87,7 +85,6 @@ export default async function IssuePage({ params }: IssuePageProps) {
           </Suspense>
         </div>
       </div>
-
     </main>
   )
 }
