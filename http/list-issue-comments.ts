@@ -1,13 +1,17 @@
 import { CommentsListResponseSchema } from "@/api/routes/list-issue-comments"
 import { clientEnv } from "@/env"
 import { setTimeout } from "node:timers/promises"
+import { cacheLife, cacheTag } from "next/cache"
 
 interface ListIssueCommentsParams {
   issueId: string
 }
 
 export async function listIssueComments({ issueId }: ListIssueCommentsParams) {
-    await setTimeout(2000)
+  "use cache"
+
+  cacheLife("minutes")
+  cacheTag(`issue-comments-${issueId}`)
   const url = new URL(
     `/api/issues/${issueId}/comments`,
     clientEnv.NEXT_PUBLIC_API_URL,
